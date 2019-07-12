@@ -309,4 +309,7 @@
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MmN-qX-pGU"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -14,7 +14,7 @@ import FirebaseDatabase
 import Kingfisher
 
 
-struct imageCard: Decodable {
+struct imageCard: Codable {
     let name, realname, team, firstappearance: String
     let createdby, publisher: String
     let imageurl: String
@@ -22,8 +22,10 @@ struct imageCard: Decodable {
 }
 
 class FirstViewController: UIViewController {
-    var img: [imageCard]?
-    let count = 0
+    var img: [imageCard] = []
+    var k = 0
+    var index=0
+    var flag : Bool = true
     
    var imageProvider = MoyaProvider<imageNetwork>()
     
@@ -39,6 +41,8 @@ class FirstViewController: UIViewController {
     
     
     @IBAction func pangesturerecognizer(_ sender: UIPanGestureRecognizer) {
+     
+       
         guard let pictureView = sender.view else {return}
         let shift = sender.translation(in: view)
         
@@ -47,25 +51,55 @@ class FirstViewController: UIViewController {
        
         
         let xDistance = pictureView.center.x - view.center.x
+       
+       
         
-        if xDistance > 0{
+        if xDistance > 0 {
+            
+            
             Likeİmage.alpha=1
             Likeİmage.image = UIImage(named: "images")
-            imageview.kf.setImage(with:img[count], placeholder: nil, options: <#T##KingfisherOptionsInfo?#>, progressBlock: <#T##DownloadProgressBlock?##DownloadProgressBlock?##(Int64, Int64) -> Void#>, completionHandler: <#T##((Result<RetrieveImageResult, KingfisherError>) -> Void)?##((Result<RetrieveImageResult, KingfisherError>) -> Void)?##(Result<RetrieveImageResult, KingfisherError>) -> Void#>)
+            
+            
             
             }
         else{
             Likeİmage.alpha = 1
             Likeİmage.image = UIImage(named: "red-31226_960_720")
-            
+          
             
         }
         
         if sender.state == UIGestureRecognizer.State.ended{
+        
+        Likeİmage.image = nil
+         if(index < img.count-2 ){
+            index+=1
+            self.imageview.kf.setImage(with: URL(string: self.img[index].imageurl))
             UIView.animate(withDuration: 0.5, animations: {pictureView.center = self.view.center })
-            self.Likeİmage.alpha = 0
+            
+            }else{
+            
+            let alert = UIAlertController(title: "UYARI", message: "Başka kullanıcı bulunamadı.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        
+             UIView.animate(withDuration: 0.5, animations: {pictureView.center = self.view.center })
+            
             }
-}
+            
+            
+        }
+       
+           
+        
+        
+        
+        
+    }
     
     
     
@@ -94,6 +128,7 @@ class FirstViewController: UIViewController {
         
         
         
+
         imageProvider.request(.getImage) { [weak self] result in
             guard let self = self else { return }
             
@@ -106,30 +141,38 @@ class FirstViewController: UIViewController {
                     
                     let images = try JSONDecoder().decode(Array<imageCard>.self, from: response.data)
                         self.img = images
+                    print(self.flag)
+                   
+                    while(self.k <= self.img.count-1){
+                        for k in 0..<self.img.count{
+                            self.imageview.kf.indicatorType = .activity
+                            self.imageview.kf.setImage(with: URL(string: self.img[k].imageurl))
+                            self.k+=1
+                      
+                       
+                        
+                        }
+                        
+                    }
+                        
+                    
+                    
                    
                     
-                        print(images)
                     
-                   
                     
                 } catch  let error{
-                    print(error)
                     
+                    print(error)
+                   
                 }
             case .failure (let error):
                 print(error)
                 // 5
               
             }
-            
-           
-            }
+        }
         
-            
-       
-      
-        
-   
 }
     
 
