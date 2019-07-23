@@ -18,6 +18,7 @@
 		B73D293422C3453000F4D723 /* FakeTinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73D293322C3453000F4D723 /* FakeTinderUITests.swift */; };
 		B73D294422C34A6100F4D723 /* GirisEkrani.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73D294322C34A6100F4D723 /* GirisEkrani.swift */; };
 		B73D294622C3545B00F4D723 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B73D294522C3545B00F4D723 /* GoogleService-Info.plist */; };
+		B77F88A722E73BD50007DD5F /* kullaniciProfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77F88A622E73BD50007DD5F /* kullaniciProfil.swift */; };
 		B795089122D62CD2002A41B4 /* netWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = B795089022D62CD2002A41B4 /* netWork.swift */; };
 		B7A735E222C385B500F1DC90 /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A735E122C385B500F1DC90 /* FirebaseAuth.framework */; };
 		B7A735E422C385C100F1DC90 /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A735E322C385C100F1DC90 /* FirebaseDatabase.framework */; };
@@ -72,6 +73,7 @@
 		B73D293522C3453000F4D723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B73D294322C34A6100F4D723 /* GirisEkrani.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GirisEkrani.swift; sourceTree = "<group>"; };
 		B73D294522C3545B00F4D723 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B77F88A622E73BD50007DD5F /* kullaniciProfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kullaniciProfil.swift; sourceTree = "<group>"; };
 		B795089022D62CD2002A41B4 /* netWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = netWork.swift; sourceTree = "<group>"; };
 		B7A735E122C385B500F1DC90 /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A735E322C385C100F1DC90 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +183,7 @@
 				B73D291F22C3453000F4D723 /* Info.plist */,
 				B73D294522C3545B00F4D723 /* GoogleService-Info.plist */,
 				B795089022D62CD2002A41B4 /* netWork.swift */,
+				B77F88A622E73BD50007DD5F /* kullaniciProfil.swift */,
 			);
 			path = FakeTinder;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B77F88A722E73BD50007DD5F /* kullaniciProfil.swift in Sources */,
 				B73D294422C34A6100F4D723 /* GirisEkrani.swift in Sources */,
 				B73D291622C3452E00F4D723 /* SecondViewController.swift in Sources */,
 				B7E2E89322C4B39B00D1C09E /* kullanicikayit.swift in Sources */,

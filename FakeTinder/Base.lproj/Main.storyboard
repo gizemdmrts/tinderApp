@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qoM-bN-JJe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -380,20 +380,50 @@
             </objects>
             <point key="canvasLocation" x="-528.98550724637687" y="537.05357142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Kullanici Profil-->
         <scene sceneID="X3Y-6b-dET">
             <objects>
-                <viewController id="tEy-X3-R2b" sceneMemberID="viewController">
+                <viewController id="tEy-X3-R2b" customClass="kullaniciProfil" customModule="FakeTinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lsl-6b-hIR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbe-v6-0Ry">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Profil" id="sGs-UW-yfH">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="C3I-IC-x8U">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VTv-r3-g9N">
+                                                <rect key="frame" x="20" y="4" width="95" height="36"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="Unknown2 2"/>
+                                                <connections>
+                                                    <action selector="backBttn:" destination="tEy-X3-R2b" eventType="touchUpInside" id="89m-bj-XnF"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oYP-4w-nXQ">
+                                <rect key="frame" x="50" y="178" width="314" height="324"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gbe-v6-0Ry" firstAttribute="leading" secondItem="Xpt-4i-8M5" secondAttribute="leading" id="7U3-aG-Rdk"/>
+                            <constraint firstItem="oYP-4w-nXQ" firstAttribute="leading" secondItem="Xpt-4i-8M5" secondAttribute="leading" constant="50" id="Hzy-dA-QGf"/>
+                            <constraint firstItem="gbe-v6-0Ry" firstAttribute="top" secondItem="Xpt-4i-8M5" secondAttribute="top" id="Vfo-dI-x5F"/>
+                            <constraint firstItem="Xpt-4i-8M5" firstAttribute="trailing" secondItem="oYP-4w-nXQ" secondAttribute="trailing" constant="50" id="aIs-kH-leh"/>
+                            <constraint firstItem="oYP-4w-nXQ" firstAttribute="top" secondItem="gbe-v6-0Ry" secondAttribute="bottom" constant="10" id="oLg-ZP-nH7"/>
+                            <constraint firstItem="gbe-v6-0Ry" firstAttribute="trailing" secondItem="Xpt-4i-8M5" secondAttribute="trailing" id="obf-Je-To3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Xpt-4i-8M5"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Zm-Mm-Y4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="1163"/>
+            <point key="canvasLocation" x="1053.6231884057972" y="1162.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -417,8 +447,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Unknown2 2" width="41" height="36"/>
         <image name="first" width="30" height="30"/>
         <image name="images-2" width="225" height="225"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="MmN-qX-pGU"/>
+    </inferredMetricsTieBreakers>
 </document>
