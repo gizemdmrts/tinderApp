@@ -4,12 +4,13 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Home-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController storyboardIdentifier="anaSayfa" id="9pv-A4-QxB" customClass="FirstViewController" customModule="FakeTinder" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,7 +56,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="Likeİmage" destination="Enb-6i-3C5" id="3dL-8j-9rP"/>
                         <outlet property="imageview" destination="tT8-my-Dek" id="Gqc-Iv-vt2"/>
@@ -72,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="-320.08928571428572"/>
         </scene>
-        <!--Item-->
+        <!--Message-->
         <scene sceneID="yQL-N3-Vvo">
             <objects>
                 <viewController id="Q3E-60-gT4" sceneMemberID="viewController">
@@ -82,13 +83,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Gp8-1U-mrt"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="mPN-oN-iWU"/>
+                    <tabBarItem key="tabBarItem" title="Message" id="mPN-oN-iWU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yB-Gf-jDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1465" y="-352"/>
         </scene>
-        <!--Second-->
+        <!--Explore-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="FakeTinder" customModuleProvider="target" sceneMemberID="viewController">
@@ -147,7 +148,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vQ2-fe-jzl"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="mycollectionview" destination="QRu-gf-LIJ" id="T1e-8C-duc"/>
                     </connections>
@@ -218,7 +219,7 @@
             </objects>
             <point key="canvasLocation" x="-994" y="-220"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="MgF-UA-V0f">
             <objects>
                 <viewController id="tWk-iH-JL0" sceneMemberID="viewController">
@@ -228,7 +229,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="1tY-Qh-do4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="U2h-77-A2t"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="U2h-77-A2t"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ew5-6h-86D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
