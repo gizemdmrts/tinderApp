@@ -151,6 +151,7 @@
                     <tabBarItem key="tabBarItem" title="Explore" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="mycollectionview" destination="QRu-gf-LIJ" id="T1e-8C-duc"/>
+                        <segue destination="tEy-X3-R2b" kind="show" identifier="profilepath" id="OTP-l1-XAL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -378,6 +379,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqE-Ml-uFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-528.98550724637687" y="537.05357142857144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="X3Y-6b-dET">
+            <objects>
+                <viewController id="tEy-X3-R2b" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lsl-6b-hIR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Xpt-4i-8M5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Zm-Mm-Y4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055" y="1163"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

@@ -62,12 +62,19 @@ class SecondViewController:UIViewController ,UICollectionViewDelegate,UICollecti
         cell.myImageView.kf.indicatorType = .activity
         cell.myImageView.kf.setImage(with: URL(string: resimArray[indexPath.row ]))
         
-      
+        cell.myImageView.isUserInteractionEnabled = true
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
+        cell.myImageView.addGestureRecognizer(gestureRecognizer)
+        
         return cell
     }
     
   
-   
+    @objc func selectImage(){
+        
+        performSegue(withIdentifier: "profilepath", sender: nil)
+        
+    }
         
     
     
@@ -98,7 +105,8 @@ class SecondViewController:UIViewController ,UICollectionViewDelegate,UICollecti
         
         mycollectionview.collectionViewLayout = layout
         
-   
+      
+       
         
         }
     
