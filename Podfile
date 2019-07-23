@@ -8,8 +8,12 @@ pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
+pod 'Firebase/Core'
+pod 'Firebase/Firestore'
 pod 'Moya', '~> 13.0'
 pod 'Kingfisher', '~> 5.0'
+pod 'JSQMessagesViewController'
+pod 'SwiftKeychainWrapper'
 
   # Pods for FakeTinder
 

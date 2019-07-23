@@ -10,8 +10,10 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
-class kullanicikayit: UIViewController , UIPickerViewDataSource,UIPickerViewDelegate{
+
+class kullanicikayit: UIViewController , UIPickerViewDataSource,UIPickerViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     
     @IBOutlet weak var adiTxt: UITextField!
@@ -19,6 +21,14 @@ class kullanicikayit: UIViewController , UIPickerViewDataSource,UIPickerViewDele
     @IBOutlet weak var soyadiTxt: UITextField!
     
     @IBOutlet weak var sehirlerTxt: UITextField!
+    
+    let img = UIImagePickerController()
+    var originalImage:UIImage? = nil
+    var processedImage:UIImage? = nil
+    
+    
+    
+    
     
     let thePicker = UIPickerView()
     
@@ -76,6 +86,10 @@ class kullanicikayit: UIViewController , UIPickerViewDataSource,UIPickerViewDele
     
    
     @IBAction func kayitOl(_ sender: Any) {
+        
+        
+
+        
         if emailTxt.text != "" && passwordTxt.text != "" {
             Auth.auth().createUser(withEmail: emailTxt.text!, password: passwordTxt.text!){
                 (userdata,error) in
@@ -98,19 +112,82 @@ class kullanicikayit: UIViewController , UIPickerViewDataSource,UIPickerViewDele
             let okButton = UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil)
             alert.addAction(okButton)
             self.present(alert,animated: true)
+           
+            
+            }
+        var uuid = NSUUID().uuidString
+        
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let mediaFolder = storageRef.child("media")
+        
+        if let data = imgview.image?.jpegData(compressionQuality: 0.5){
+            
+            let mediaImages = mediaFolder.child("\(uuid).jpg")
+            mediaImages.putData(data, metadata: nil)    { (metadata,error) in
+                if error != nil{
+                    let alert = UIAlertController(title: " error ", message:error?.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                    let okButton = UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil)
+                    alert.addAction(okButton)
+                    self.present(alert,animated: true)
+                    
+                }
+                else{
+                    mediaImages.downloadURL(completion: {(url,error) in
+                        if error == nil{
+                            
+                            let imageUrl = url?.absoluteString
+                            let databaseReference = Database.database().reference()
+                            databaseReference.child("users").child((Auth.auth().currentUser?.uid)!).setValue(["image":imageUrl,"adi":self.adiTxt.text,"soyadi":self.soyadiTxt.text,"doğum tarihi":self.dTarihiText.text,"sehir":self.sehirlerTxt.text])
+                            
+                        }
+                        
+                    })
+                }
+                
+            }
+            
             
         }
         
+        
+        
        
-     
-    }
+        
+        
+        }
+    @IBOutlet weak var imgview: UIImageView!
+   
+    
+   
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
     }
+    @objc func selectImage(){
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = .photoLibrary
+        pickerController.allowsEditing = true
+        present(pickerController, animated: true, completion: nil)
+        
+        
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imgview.image = info[.originalImage] as? UIImage
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
     
     
     override func viewDidLoad() {
+        
+        imgview.isUserInteractionEnabled = true
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
+        imgview.addGestureRecognizer(gestureRecognizer)
         
         super.viewDidLoad()
         
@@ -119,9 +196,10 @@ class kullanicikayit: UIViewController , UIPickerViewDataSource,UIPickerViewDele
         sehirlerTxt.inputView = thePicker
         
         thePicker.delegate = self
+        
        
-     
     }
+    
     
     
 

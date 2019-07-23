@@ -25,6 +25,7 @@
 		B7AB9C6422C3730900ABA390 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AB9C6322C3730900ABA390 /* FirebaseCore.framework */; };
 		B7AB9C6622C3736500ABA390 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7AB9C6522C3736500ABA390 /* FirebaseInstanceID.framework */; };
 		B7E2E89322C4B39B00D1C09E /* kullanicikayit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E2E89222C4B39B00D1C09E /* kullanicikayit.swift */; };
+		B7EE99F022E5B90700A4957A /* myCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE99EF22E5B90700A4957A /* myCell.swift */; };
 		B9BCE2A3725192535B4A887B /* Pods_FakeTinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7F7FB4F37ABC0DCCBEFB73 /* Pods_FakeTinderTests.framework */; };
 		D188264CBD066BF396E71592 /* Pods_FakeTinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F6351C5AAD9732923EA927C /* Pods_FakeTinder.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		B7AB9C6322C3730900ABA390 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7AB9C6522C3736500ABA390 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseInstanceID.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7E2E89222C4B39B00D1C09E /* kullanicikayit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kullanicikayit.swift; sourceTree = "<group>"; };
+		B7EE99EF22E5B90700A4957A /* myCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCell.swift; sourceTree = "<group>"; };
 		F2DE0E5E0593FF54BDA6ED2E /* Pods-FakeTinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeTinder.release.xcconfig"; path = "Target Support Files/Pods-FakeTinder/Pods-FakeTinder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 				B73D291322C3452E00F4D723 /* FirstViewController.swift */,
 				B73D291522C3452E00F4D723 /* SecondViewController.swift */,
 				B73D291722C3452E00F4D723 /* Main.storyboard */,
+				B7EE99EF22E5B90700A4957A /* myCell.swift */,
 				B7E2E89222C4B39B00D1C09E /* kullanicikayit.swift */,
 				B73D294322C34A6100F4D723 /* GirisEkrani.swift */,
 				B73D291A22C3453000F4D723 /* Assets.xcassets */,
@@ -427,6 +430,7 @@
 				B7E2E89322C4B39B00D1C09E /* kullanicikayit.swift in Sources */,
 				B73D291222C3452E00F4D723 /* AppDelegate.swift in Sources */,
 				B795089122D62CD2002A41B4 /* netWork.swift in Sources */,
+				B7EE99F022E5B90700A4957A /* myCell.swift in Sources */,
 				B73D291422C3452E00F4D723 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,6 +610,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ARX75W254D;
 				INFOPLIST_FILE = FakeTinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -625,6 +630,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ARX75W254D;
 				INFOPLIST_FILE = FakeTinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
