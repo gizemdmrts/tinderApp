@@ -181,6 +181,12 @@ class kullanicikayit: UIViewController , UIPickerViewDataSource,UIPickerViewDele
         
     }
     
+    @IBAction func backBttn(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "donus", sender: nil)
+    }
+    
+    
     
     
     override func viewDidLoad() {
