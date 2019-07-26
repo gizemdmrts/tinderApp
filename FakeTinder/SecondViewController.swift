@@ -15,14 +15,14 @@ import Kingfisher
 
 
 
-class SecondViewController:UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
+ class SecondViewController:UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
     
     @IBOutlet weak var mycollectionview: UICollectionView!
    
-    var resimArray = [String]()
+    public var resimArray = [String]()
    
     
-    func resimdata(){
+     func resimdata(){
         
         
         //Veritabanından resimlerin linkine çekiyoruz
@@ -34,7 +34,7 @@ class SecondViewController:UIViewController ,UICollectionViewDelegate,UICollecti
             let values = snapshot.value! as! NSDictionary
             
                 let resim = values["image"]
-                //resimArraye resimlerin linkleri tek tek ekliyoruz
+            
                 self.resimArray.append(resim as! String)
             
             self.mycollectionview.reloadData()
@@ -55,7 +55,7 @@ class SecondViewController:UIViewController ,UICollectionViewDelegate,UICollecti
         return resimArray.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! myCell
@@ -73,6 +73,8 @@ class SecondViewController:UIViewController ,UICollectionViewDelegate,UICollecti
     @objc func selectImage(){
         
         performSegue(withIdentifier: "profilepath", sender: nil)
+    
+      
         
     }
         
