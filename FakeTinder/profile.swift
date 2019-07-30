@@ -63,8 +63,10 @@ class profile: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profilPicture.layer.cornerRadius = profilPicture.frame.size.width / 2;
-        profilPicture.clipsToBounds = true
+       
+        profilPicture.layer.cornerRadius =  profilPicture.bounds.height / 2
+       profilPicture.clipsToBounds = true
+        
         currentprofile()
         
         

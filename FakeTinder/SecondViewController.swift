@@ -19,8 +19,9 @@ import Kingfisher
     
     @IBOutlet weak var mycollectionview: UICollectionView!
    
-    public var resimArray = [String]()
-   
+  
+    
+    var someProtocol = [String : String]()
     
      func resimdata(){
         
@@ -28,16 +29,16 @@ import Kingfisher
         //Veritabanından resimlerin linkine çekiyoruz
         Database.database().reference().child("users").observe(DataEventType.childAdded) { (snapshot) in
             
+        let values = snapshot.value! as! NSDictionary
             
             
-           
-            let values = snapshot.value! as! NSDictionary
+            let resim = values["image"] as! String
+           let user = snapshot.key
             
-                let resim = values["image"]
-            
-                self.resimArray.append(resim as! String)
+            self.someProtocol[resim] = user
             
             self.mycollectionview.reloadData()
+            
         }
             
         }
@@ -45,38 +46,38 @@ import Kingfisher
         
     
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+      
+        
+        performSegue(withIdentifier: "profilepath", sender:(Array(someProtocol.keys)[indexPath.row]) )
+        
+        
+        
+    }
     
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        
         
-        return resimArray.count
+        return someProtocol.count
     }
     
    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! myCell
+    
         cell.myImageView.kf.indicatorType = .activity
-        cell.myImageView.kf.setImage(with: URL(string: resimArray[indexPath.row ]))
+    
+        cell.myImageView.kf.setImage(with: URL(string: Array(someProtocol.keys)[indexPath.row]))
         
         cell.myImageView.isUserInteractionEnabled = true
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
-        cell.myImageView.addGestureRecognizer(gestureRecognizer)
-        
         return cell
     }
     
   
-    @objc func selectImage(){
-        
-        performSegue(withIdentifier: "profilepath", sender: nil)
-    
-      
-        
-    }
+ 
         
     
     
@@ -106,6 +107,8 @@ import Kingfisher
         
         
         mycollectionview.collectionViewLayout = layout
+        mycollectionview.delegate = self
+        mycollectionview.dataSource = self
         
       
        

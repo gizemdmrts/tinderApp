@@ -29,11 +29,16 @@ public class kullaniciProfil: UIViewController{
     
     @IBAction func backBttn(_ sender: Any) {
         
+        
            performSegue(withIdentifier: "back", sender: nil)
         
     }
     
     public override func viewDidLoad() {
+        
+        imageViewpp.layer.cornerRadius =  imageViewpp.bounds.height / 2
+        imageViewpp.clipsToBounds = true
+        
         super.viewDidLoad()
         
       
