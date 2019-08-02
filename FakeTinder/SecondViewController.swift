@@ -49,13 +49,18 @@ import Kingfisher
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       
         
-        performSegue(withIdentifier: "profilepath", sender:(Array(someProtocol.keys)[indexPath.row]) )
-        
+     performSegue(withIdentifier: "profilepath", sender: someProtocol[Array(someProtocol.keys)[indexPath.row]])
         
         
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "profilepath" {
+            if let viewController = segue.destination as? kullaniciProfil {
+                viewController.uid = (sender as? String)!
+            }
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        

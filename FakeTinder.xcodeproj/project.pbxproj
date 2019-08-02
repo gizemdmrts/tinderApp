@@ -18,6 +18,10 @@
 		B73D293422C3453000F4D723 /* FakeTinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73D293322C3453000F4D723 /* FakeTinderUITests.swift */; };
 		B73D294422C34A6100F4D723 /* GirisEkrani.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73D294322C34A6100F4D723 /* GirisEkrani.swift */; };
 		B73D294622C3545B00F4D723 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B73D294522C3545B00F4D723 /* GoogleService-Info.plist */; };
+		B75CEB2822F32D380083383D /* messagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75CEB2722F32D380083383D /* messagesViewController.swift */; };
+		B75CEB2A22F34EA60083383D /* tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75CEB2922F34EA60083383D /* tableview.swift */; };
+		B75CEB2C22F369820083383D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75CEB2B22F369820083383D /* User.swift */; };
+		B75CEB2E22F406D70083383D /* MessagePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75CEB2D22F406D70083383D /* MessagePanel.swift */; };
 		B77F88A722E73BD50007DD5F /* kullaniciProfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77F88A622E73BD50007DD5F /* kullaniciProfil.swift */; };
 		B78E110122E9D672009DF9EE /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78E110022E9D672009DF9EE /* profile.swift */; };
 		B78E110522EAF2AE009DF9EE /* current.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78E110422EAF2AE009DF9EE /* current.swift */; };
@@ -75,6 +79,10 @@
 		B73D293522C3453000F4D723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B73D294322C34A6100F4D723 /* GirisEkrani.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GirisEkrani.swift; sourceTree = "<group>"; };
 		B73D294522C3545B00F4D723 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B75CEB2722F32D380083383D /* messagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messagesViewController.swift; sourceTree = "<group>"; };
+		B75CEB2922F34EA60083383D /* tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableview.swift; sourceTree = "<group>"; };
+		B75CEB2B22F369820083383D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B75CEB2D22F406D70083383D /* MessagePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePanel.swift; sourceTree = "<group>"; };
 		B77F88A622E73BD50007DD5F /* kullaniciProfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kullaniciProfil.swift; sourceTree = "<group>"; };
 		B78E110022E9D672009DF9EE /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 		B78E110422EAF2AE009DF9EE /* current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = current.swift; sourceTree = "<group>"; };
@@ -175,13 +183,17 @@
 		B73D291022C3452E00F4D723 /* FakeTinder */ = {
 			isa = PBXGroup;
 			children = (
+				B75CEB2722F32D380083383D /* messagesViewController.swift */,
+				B75CEB2B22F369820083383D /* User.swift */,
 				B73D291122C3452E00F4D723 /* AppDelegate.swift */,
 				B73D291322C3452E00F4D723 /* FirstViewController.swift */,
 				B73D291522C3452E00F4D723 /* SecondViewController.swift */,
 				B73D291722C3452E00F4D723 /* Main.storyboard */,
+				B75CEB2D22F406D70083383D /* MessagePanel.swift */,
 				B78E110022E9D672009DF9EE /* profile.swift */,
 				B78E110422EAF2AE009DF9EE /* current.swift */,
 				B7EE99EF22E5B90700A4957A /* myCell.swift */,
+				B75CEB2922F34EA60083383D /* tableview.swift */,
 				B7E2E89222C4B39B00D1C09E /* kullanicikayit.swift */,
 				B73D294322C34A6100F4D723 /* GirisEkrani.swift */,
 				B73D291A22C3453000F4D723 /* Assets.xcassets */,
@@ -434,15 +446,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B75CEB2C22F369820083383D /* User.swift in Sources */,
 				B78E110122E9D672009DF9EE /* profile.swift in Sources */,
 				B77F88A722E73BD50007DD5F /* kullaniciProfil.swift in Sources */,
 				B73D294422C34A6100F4D723 /* GirisEkrani.swift in Sources */,
 				B73D291622C3452E00F4D723 /* SecondViewController.swift in Sources */,
 				B7E2E89322C4B39B00D1C09E /* kullanicikayit.swift in Sources */,
+				B75CEB2E22F406D70083383D /* MessagePanel.swift in Sources */,
+				B75CEB2A22F34EA60083383D /* tableview.swift in Sources */,
 				B73D291222C3452E00F4D723 /* AppDelegate.swift in Sources */,
 				B795089122D62CD2002A41B4 /* netWork.swift in Sources */,
 				B78E110522EAF2AE009DF9EE /* current.swift in Sources */,
 				B7EE99F022E5B90700A4957A /* myCell.swift in Sources */,
+				B75CEB2822F32D380083383D /* messagesViewController.swift in Sources */,
 				B73D291422C3452E00F4D723 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

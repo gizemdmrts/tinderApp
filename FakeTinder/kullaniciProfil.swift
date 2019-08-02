@@ -14,32 +14,55 @@ import FirebaseDatabase
 import FirebaseStorage
 import Kingfisher
 
-public class kullaniciProfil: UIViewController{
+ class kullaniciProfil: UIViewController{
     
    
-    
+    var uid = String()
     
     @IBOutlet  weak var imageViewpp: UIImageView!
     @IBOutlet  weak var adPP: UILabel!
     @IBOutlet  weak var soyad: UILabel!
     @IBOutlet  weak var ilPP: UILabel!
+    @IBOutlet weak var dogumTarihi: UILabel!
     
     
+    func currentprofile(){
+        
+            Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value ,with:  { (snapshot) in
+                
+              
+                
+                guard let dict = snapshot.value as? [String:Any] else {return}
+                
+                
+                let user = current(uid: self.uid , dictionary: dict)
+                
+                self.adPP.text = user.adi
+                self.soyad.text = user.soyadi
+                self.ilPP.text = user.sehir
+                self.dogumTarihi.text = user.dogumtarihi
+                self.imageViewpp.kf.setImage(with: URL(string: user.resim))
+                
+                
+            })
+        }
     
-    
-    @IBAction func backBttn(_ sender: Any) {
         
         
-           performSegue(withIdentifier: "back", sender: nil)
         
-    }
+        
     
-    public override func viewDidLoad() {
+    
+   
+    
+     override func viewDidLoad() {
+         super.viewDidLoad()
         
+      
         imageViewpp.layer.cornerRadius =  imageViewpp.bounds.height / 2
         imageViewpp.clipsToBounds = true
         
-        super.viewDidLoad()
+       currentprofile()
         
       
     }

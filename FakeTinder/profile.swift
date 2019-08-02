@@ -33,7 +33,7 @@ class profile: UIViewController {
                     guard let dict = snapshot.value as? [String:Any] else {return}
                     
      
-            let user = current(uid: uid , dictionary: dict)
+            let user = current(uid:uid , dictionary: dict)
             
             self.adi.text = user.adi
             self.soyadi.text = user.soyadi
