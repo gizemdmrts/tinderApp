@@ -146,8 +146,6 @@ class kullanicikayit: UIViewController , UIPickerViewDataSource,UIPickerViewDele
                 }
                 
             }
-            
-            
         }
         
         

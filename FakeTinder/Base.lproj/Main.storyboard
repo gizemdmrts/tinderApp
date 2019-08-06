@@ -417,6 +417,14 @@
                                 <rect key="frame" x="95" y="109" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwl-Wx-kLK">
+                                <rect key="frame" x="240" y="275" width="55" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="editButton:" destination="tWk-iH-JL0" eventType="touchUpInside" id="ial-Ie-drW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="1tY-Qh-do4"/>
@@ -723,7 +731,7 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1ca-Gg-Dg0"/>
+        <segue reference="oRr-UJ-Ezm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.97374919039999996" green="0.075503137600000006" blue="0.9138866752" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
