@@ -56,7 +56,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="icons8-home-page-50" id="acW-dT-cKf">
+                        <inset key="imageInsets" minX="0.0" minY="13" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="Likeİmage" destination="Enb-6i-3C5" id="3dL-8j-9rP"/>
                         <outlet property="imageview" destination="tT8-my-Dek" id="Gqc-Iv-vt2"/>
@@ -426,10 +428,12 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.91081743140000004" green="0.91081743140000004" blue="0.91081743140000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="1tY-Qh-do4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="U2h-77-A2t"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="icons8-user-50" id="U2h-77-A2t">
+                        <inset key="imageInsets" minX="0.0" minY="11" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="adi" destination="tqN-P8-3YL" id="zBI-Ob-l1r"/>
                         <outlet property="dogumtarihi" destination="5Dv-Yw-20S" id="uNz-mp-bct"/>
@@ -583,7 +587,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.91081743140000004" green="0.91081743140000004" blue="0.91081743140000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Ibs-n7-BMS"/>
                     </view>
                     <connections>
@@ -643,7 +647,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.91081743140000004" green="0.91081743140000004" blue="0.91081743140000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.97374919039999996" green="0.075503137600000006" blue="0.9138866752" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Xpt-4i-8M5"/>
                     </view>
@@ -685,7 +689,9 @@
         <scene sceneID="usp-5E-9tH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tf0-bs-5Zv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Explore" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="icons8-search-50" id="cPa-gy-q4n">
+                        <inset key="imageInsets" minX="0.0" minY="11" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1zE-If-rja">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -704,7 +710,8 @@
         <scene sceneID="duN-03-YsY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YrF-It-ZEw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Messages" id="GTK-cR-8vT">
+                    <tabBarItem key="tabBarItem" title="Messages" image="icons8-chat-message-50" id="GTK-cR-8vT">
+                        <inset key="imageInsets" minX="0.0" minY="11" maxX="0.0" maxY="0.0"/>
                         <inset key="largeContentSizeImageInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -726,9 +733,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="icons8-chat-message-50" width="50" height="50"/>
+        <image name="icons8-home-page-50" width="50" height="50"/>
+        <image name="icons8-search-50" width="50" height="50"/>
+        <image name="icons8-user-50" width="50" height="50"/>
         <image name="images-2" width="225" height="225"/>
-        <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oRr-UJ-Ezm"/>
