@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 
-class messagepanel1: UIViewController , UITableViewDataSource , UITableViewDelegate  {
+class messagepanel1: UIViewController , UITableViewDataSource , UITableViewDelegate ,UITextFieldDelegate{
    
     
     var selectUser = User()
@@ -20,10 +20,6 @@ class messagepanel1: UIViewController , UITableViewDataSource , UITableViewDeleg
    
     
     @IBOutlet weak var chatTableView: UITableView!
-    
-    @IBOutlet weak var mynavigationItem: UINavigationItem!
-    
-    
     @IBOutlet weak var messagetxt: UITextField!
    
     
@@ -35,6 +31,7 @@ class messagepanel1: UIViewController , UITableViewDataSource , UITableViewDeleg
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = chatTableView.dequeueReusableCell(withIdentifier: "chatcell", for: indexPath) as! chatCell
             let user = usersChat[indexPath.row]
+        
         if   Auth.auth().currentUser!.uid == user.fromID{
             cell.messagesLabel.backgroundColor = UIColor.yellow
             cell.messagesLabel.text = user.text
@@ -50,6 +47,7 @@ class messagepanel1: UIViewController , UITableViewDataSource , UITableViewDeleg
             cell.messagesLabel.adjustsFontSizeToFitWidth = true
         
         }
+     
             return cell
     }
     
@@ -99,7 +97,9 @@ class messagepanel1: UIViewController , UITableViewDataSource , UITableViewDeleg
     
     
     
-    
+  override  func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
+    }
     
     override func viewDidLoad() {
        
@@ -108,8 +108,8 @@ class messagepanel1: UIViewController , UITableViewDataSource , UITableViewDeleg
         chatData()
         chatTableView.delegate = self
         chatTableView.dataSource = self
-       
-   self.navigationItem.title = selectUser.adi
+       self.navigationItem.title = selectUser.adi
+        messagetxt.delegate = self
    // let tabIcon = UIApplicationShortcutIcon(type: .message)
        // var tabItem: UITabBarItem = UITabBarItem(title: "Messages", image: , selectedImage: )
     //self.tabBarItem = tabItem

@@ -156,14 +156,11 @@ class kullanicikayit: UIViewController , UIPickerViewDataSource,UIPickerViewDele
         }
     @IBOutlet weak var imgview: UIImageView!
    
-    
-   
-    
-    
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
     }
+    
+    
     @objc func selectImage(){
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
@@ -173,6 +170,9 @@ class kullanicikayit: UIViewController , UIPickerViewDataSource,UIPickerViewDele
         
         
     }
+   
+    
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imgview.image = info[.originalImage] as? UIImage
         self.dismiss(animated: true, completion: nil)

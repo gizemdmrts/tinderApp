@@ -47,7 +47,7 @@
                                 </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="tlJ-fp-EF4" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="3xM-2W-79k"/>
@@ -240,7 +240,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QRu-gf-LIJ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.96313827500000004" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dYZ-fK-dhV">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -337,16 +337,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e9p-LA-zth">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e9p-LA-zth">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Giriş Ekranı" id="LLB-81-0H5"/>
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.91081743135353443" green="0.91081743135353443" blue="0.91081743135353443" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.96313827495052395" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.97374919039999996" green="0.075503137600000006" blue="0.9138866752" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="e9p-LA-zth" firstAttribute="leading" secondItem="GPd-0M-76f" secondAttribute="leading" id="Bha-43-iTk"/>
+                            <constraint firstItem="e9p-LA-zth" firstAttribute="trailing" secondItem="GPd-0M-76f" secondAttribute="trailing" id="Y0O-pu-tbZ"/>
+                            <constraint firstItem="e9p-LA-zth" firstAttribute="top" secondItem="GPd-0M-76f" secondAttribute="top" id="vQy-8M-CgY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GPd-0M-76f"/>
                     </view>
                     <connections>
@@ -428,7 +432,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.91081743140000004" green="0.91081743140000004" blue="0.91081743140000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.96313827500000004" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="1tY-Qh-do4"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="icons8-user-50" id="U2h-77-A2t">
@@ -587,7 +591,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.91081743140000004" green="0.91081743140000004" blue="0.91081743140000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.96313827500000004" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Ibs-n7-BMS"/>
                     </view>
                     <connections>
