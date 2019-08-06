@@ -8,8 +8,22 @@
 
 import UIKit
 
-class MessagePanel: UIViewController {
-     var selectUser = [User]()
+class MessagePanel: UIViewController{
+    
+    var selectUser = User()
+   
+    @IBOutlet weak var sendTxt: UITextField!
+    
+    @IBAction func Senbttn(_ sender: Any) {
+    
+    
+    }
+    
+
+   
+    
+   
+    
     
     
     

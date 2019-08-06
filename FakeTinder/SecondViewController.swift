@@ -31,17 +31,21 @@ import Kingfisher
             
         let values = snapshot.value! as! NSDictionary
             
+            if snapshot.key != Auth.auth().currentUser!.uid {
+                
+                let resim = values["image"] as! String
+                let user = snapshot.key
             
-            let resim = values["image"] as! String
-           let user = snapshot.key
             
-            self.someProtocol[resim] = user
+                self.someProtocol[resim] = user
             
-            self.mycollectionview.reloadData()
+                self.mycollectionview.reloadData()
+                
+            }
             
         }
             
-        }
+    }
         
         
     
@@ -78,6 +82,7 @@ import Kingfisher
         cell.myImageView.kf.setImage(with: URL(string: Array(someProtocol.keys)[indexPath.row]))
         
         cell.myImageView.isUserInteractionEnabled = true
+    
         return cell
     }
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qoM-bN-JJe">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -142,27 +142,91 @@
                     <navigationItem key="navigationItem" title="Messages" id="76C-tA-xP4"/>
                     <connections>
                         <outlet property="tableviewpp" destination="Auh-fB-bPF" id="EaM-pa-Mfp"/>
-                        <segue destination="ROn-Gh-Qfq" kind="show" identifier="messagesShow" id="k6N-MT-FVc"/>
+                        <segue destination="tdf-fh-Bnl" kind="show" identifier="messagePath" id="Uxs-d5-caN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqI-Jt-CYK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3578" y="-386"/>
+            <point key="canvasLocation" x="3548" y="-402"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="my7-Pe-e1e">
+        <!--Messagepanel1-->
+        <scene sceneID="2DP-dZ-Hq4">
             <objects>
-                <viewController id="ROn-Gh-Qfq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5j2-xB-Tba">
+                <viewController id="tdf-fh-Bnl" customClass="messagepanel1" customModule="FakeTinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HBn-DR-pwu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emQ-k0-iPR">
+                                <rect key="frame" x="304" y="773" width="110" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="bttnAction:" destination="tdf-fh-Bnl" eventType="touchUpInside" id="9hX-Jt-KFN"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Send message.." minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="5gB-np-XXX">
+                                <rect key="frame" x="0.0" y="773" width="304" height="38"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Yf-cj-qww">
+                                <rect key="frame" x="0.0" y="88" width="414" height="677"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatcell" rowHeight="111" id="qrd-wv-UCf" customClass="chatCell" customModule="FakeTinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="111"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qrd-wv-UCf" id="TVX-X4-Dfe">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="110.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7m-4d-fVE">
+                                                    <rect key="frame" x="0.0" y="16" width="414" height="78"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="A7m-4d-fVE" secondAttribute="trailing" id="cGI-Op-INz"/>
+                                                <constraint firstItem="A7m-4d-fVE" firstAttribute="leading" secondItem="TVX-X4-Dfe" secondAttribute="leading" id="lb8-dD-glW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messagesLabel" destination="A7m-4d-fVE" id="Xxo-kP-fLg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tdf-fh-Bnl" id="PVO-k7-TTU"/>
+                                    <outlet property="delegate" destination="tdf-fh-Bnl" id="pJW-RV-y5I"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="AYj-e3-fhe"/>
+                        <constraints>
+                            <constraint firstItem="5Yf-cj-qww" firstAttribute="leading" secondItem="pI5-Pd-1qa" secondAttribute="leading" id="5qR-F1-YOu"/>
+                            <constraint firstItem="5Yf-cj-qww" firstAttribute="top" secondItem="pI5-Pd-1qa" secondAttribute="top" id="8dR-Lf-i5p"/>
+                            <constraint firstItem="5Yf-cj-qww" firstAttribute="trailing" secondItem="pI5-Pd-1qa" secondAttribute="trailing" id="CVz-PD-iTa"/>
+                            <constraint firstItem="emQ-k0-iPR" firstAttribute="trailing" secondItem="pI5-Pd-1qa" secondAttribute="trailing" id="ZLi-8d-BBL"/>
+                            <constraint firstItem="emQ-k0-iPR" firstAttribute="bottom" secondItem="pI5-Pd-1qa" secondAttribute="bottom" id="awh-I2-cai"/>
+                            <constraint firstItem="5gB-np-XXX" firstAttribute="leading" secondItem="pI5-Pd-1qa" secondAttribute="leading" id="eIb-5G-Cqi"/>
+                            <constraint firstItem="5gB-np-XXX" firstAttribute="bottom" secondItem="pI5-Pd-1qa" secondAttribute="bottom" constant="-2" id="gyA-jl-Npn"/>
+                            <constraint firstItem="emQ-k0-iPR" firstAttribute="leading" secondItem="5gB-np-XXX" secondAttribute="trailing" id="iKs-lA-dHd"/>
+                            <constraint firstItem="5gB-np-XXX" firstAttribute="top" secondItem="5Yf-cj-qww" secondAttribute="bottom" constant="8" id="oTc-Eh-aMN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pI5-Pd-1qa"/>
                     </view>
+                    <connections>
+                        <outlet property="chatTableView" destination="5Yf-cj-qww" id="Mup-UQ-kwn"/>
+                        <outlet property="messagetxt" destination="5gB-np-XXX" id="jUA-54-Xoy"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Q3-CS-drg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Odd-cp-ump" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4549" y="-386"/>
+            <point key="canvasLocation" x="4801.449275362319" y="-389.0625"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -496,9 +560,12 @@
                                     <navigationItem title="Kayıt Ekranı" id="X09-YQ-aAT">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="7Oe-3Z-Bvr">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TRF-ke-Fbs">
-                                                <rect key="frame" x="20" y="4" width="41" height="36"/>
+                                                <rect key="frame" x="20" y="5" width="40" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="Unknown2 2"/>
+                                                <color key="tintColor" red="0.97374919039999996" green="0.075503137600000006" blue="0.9138866752" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Back">
+                                                    <color key="titleColor" red="0.97374919039999996" green="0.075503137600000006" blue="0.9138866752" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="backBttn:" destination="oRE-af-QXv" eventType="touchUpInside" id="IOa-7G-TQu"/>
                                                 </connections>
@@ -592,7 +659,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.97374919039999996" green="0.075503137600000006" blue="0.9138866752" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
@@ -624,11 +692,13 @@
             </objects>
             <point key="canvasLocation" x="1397" y="581"/>
         </scene>
-        <!--Item-->
+        <!--Messages-->
         <scene sceneID="duN-03-YsY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YrF-It-ZEw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="GTK-cR-8vT"/>
+                    <tabBarItem key="tabBarItem" title="Messages" id="GTK-cR-8vT">
+                        <inset key="largeContentSizeImageInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N5I-lC-ZBP">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -648,9 +718,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Unknown2 2" width="41" height="36"/>
         <image name="first" width="30" height="30"/>
-        <image name="images-2" width="75" height="75"/>
+        <image name="images-2" width="225" height="225"/>
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -34,9 +34,12 @@ class messagesViewController: UIViewController,UITableViewDelegate , UITableView
                 user.adi = dictionary["adi"] as! String
                 user.image = dictionary["image"] as! String
                 user.uid = snapshot.key
+                if user.uid != Auth.auth().currentUser!.uid {
                 
                 self.users.append(user)
-                self.tableviewpp.reloadData()
+                    self.tableviewpp.reloadData()
+                    
+                }
                 
             }
             
@@ -45,14 +48,14 @@ class messagesViewController: UIViewController,UITableViewDelegate , UITableView
 }
    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         performSegue(withIdentifier: "messagesShow", sender: users[indexPath.row] )
+         performSegue(withIdentifier: "messagePath", sender: users[indexPath.row] )
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "messagesShow" {
-            if let viewController = segue.destination as? MessagePanel {
-                viewController.selectUser = (sender as? AnyObject)! as! [User]
+        if segue.identifier == "messagePath" {
+            if let viewController = segue.destination as? messagepanel1 {
+                viewController.selectUser = (sender) as! User
             }
         }
     }
@@ -64,10 +67,13 @@ class messagesViewController: UIViewController,UITableViewDelegate , UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableviewpp.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! tableview
        let user = users[indexPath.row]
+        if user.uid != Auth.auth().currentUser!.uid {
         cell.mylabelpp.text = user.adi
         cell.myimagepp.kf.indicatorType = .activity
         
-        cell.myimagepp.kf.setImage(with: URL(string: user.image!))
+            cell.myimagepp.kf.setImage(with: URL(string: user.image!))
+            
+        }
         return cell
     }
     
