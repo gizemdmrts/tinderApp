@@ -68,9 +68,11 @@ class messagesViewController: UIViewController,UITableViewDelegate , UITableView
         let cell = tableviewpp.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! tableview
        let user = users[indexPath.row]
         if user.uid != Auth.auth().currentUser!.uid {
-        cell.mylabelpp.text = user.adi
-        cell.myimagepp.kf.indicatorType = .activity
-        
+            cell.mylabelpp.text = user.adi
+            cell.myimagepp.layer.cornerRadius =  cell.myimagepp.bounds.height / 2
+            cell.myimagepp.clipsToBounds = true
+            
+            cell.myimagepp.kf.indicatorType = .activity
             cell.myimagepp.kf.setImage(with: URL(string: user.image!))
             
         }

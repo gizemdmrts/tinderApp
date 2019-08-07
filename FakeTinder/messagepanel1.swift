@@ -89,15 +89,37 @@ class messagepanel1: UIViewController , UITableViewDataSource , UITableViewDeleg
             }
     })
     
-}
-   
+    }
+   // textfieldı klavyeninin üzerine alma kodu
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            UIView.animate(withDuration: 0.1, animations: { () -> Void in
+                self.view.frame.origin.y -= keyboardSize.height
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            UIView.animate(withDuration: 0.1, animations: { () -> Void in
+                self.view.frame.origin.y += keyboardSize.height
+                self.view.layoutIfNeeded()
+            })
+        }
+    }
     
     
     
+    // ekranın herhangi bir yerine tıklanınca klavyenin kapanma fonksiyonu.
   override  func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
     }
     
+   
     override func viewDidLoad() {
        
         super.viewDidLoad()
@@ -110,17 +132,17 @@ class messagepanel1: UIViewController , UITableViewDataSource , UITableViewDeleg
         
        self.navigationItem.title = selectUser.adi
         messagetxt.delegate = self
-   // let tabIcon = UIApplicationShortcutIcon(type: .message)
-       // var tabItem: UITabBarItem = UITabBarItem(title: "Messages", image: , selectedImage: )
-    //self.tabBarItem = tabItem
         
-      
-    }
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+}
     
 
    
 
 }
+// en son celli ekrana getirme kodu.
+
 extension UITableView {
     
     func scrollToBottom(){
