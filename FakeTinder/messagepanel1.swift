@@ -33,19 +33,20 @@ class messagepanel1: UIViewController , UITableViewDataSource , UITableViewDeleg
             let user = usersChat[indexPath.row]
         
         if   Auth.auth().currentUser!.uid == user.fromID{
-            cell.messagesLabel.backgroundColor = UIColor.yellow
-            cell.messagesLabel.text = user.text
-            cell.messagesLabel.textAlignment = NSTextAlignment.right
+           
             
+            cell.gidenview.isHidden = false
+            cell.gelenview.isHidden = true
+            cell.gelenmessage.text = ""
+            cell.gidenmessage.text = user.text
+           
            
         }
         else{
-            
-            cell.messagesLabel.text = user.text
-            cell.messagesLabel.textAlignment = NSTextAlignment.left
-            cell.messagesLabel.backgroundColor = UIColor.white
-            cell.messagesLabel.adjustsFontSizeToFitWidth = true
-        
+            cell.gelenview.isHidden = false
+            cell.gelenmessage.text = user.text
+            cell.gidenview.isHidden = true
+            cell.gidenmessage.text = ""
         }
      
             return cell
@@ -79,21 +80,17 @@ class messagepanel1: UIViewController , UITableViewDataSource , UITableViewDeleg
                     user.text = dictionary["text"] as! String
                     self.usersChat.append(user)
                     self.chatTableView.reloadData()
+                    self.chatTableView.scrollToBottom()
                     
                 }
                else{
                   print ("eror")
-                
                 }
-    
             }
-    
-            
-       
-        
     })
     
 }
+   
     
     
     
@@ -104,10 +101,13 @@ class messagepanel1: UIViewController , UITableViewDataSource , UITableViewDeleg
     override func viewDidLoad() {
        
         super.viewDidLoad()
-       
+        
         chatData()
         chatTableView.delegate = self
         chatTableView.dataSource = self
+        chatTableView.rowHeight = UITableView.automaticDimension
+        chatTableView.estimatedRowHeight = 300
+        
        self.navigationItem.title = selectUser.adi
         messagetxt.delegate = self
    // let tabIcon = UIApplicationShortcutIcon(type: .message)
@@ -120,4 +120,26 @@ class messagepanel1: UIViewController , UITableViewDataSource , UITableViewDeleg
 
    
 
+}
+extension UITableView {
+    
+    func scrollToBottom(){
+        
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: self.numberOfRows(inSection:  self.numberOfSections-1) - 1,
+                section: self.numberOfSections - 1)
+            if indexPath.row > 0 {
+                self.scrollToRow(at: indexPath, at: .bottom, animated: true)
+
+            }
+        }
+    }
+    
+    func scrollToTop() {
+        
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(row: 0, section: 0)
+            self.scrollToRow(at: indexPath, at: .top, animated: false)
+        }
+    }
 }

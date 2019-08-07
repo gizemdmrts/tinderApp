@@ -10,7 +10,11 @@ import UIKit
 
 class chatCell: UITableViewCell {
     
-    @IBOutlet weak var messagesLabel: UILabel!
+    @IBOutlet weak var gelenmessage: UILabel!
+    @IBOutlet weak var gelenview: UIView!
+    
+    @IBOutlet weak var gidenmessage: UILabel!
+    @IBOutlet weak var gidenview: UIView!
     
    
     
