@@ -21,6 +21,7 @@ class kullanicikayit: UIViewController , UIPickerViewDataSource,UIPickerViewDele
     @IBOutlet weak var soyadiTxt: UITextField!
     
     @IBOutlet weak var sehirlerTxt: UITextField!
+    @IBOutlet weak var bilgilabel: UILabel!
     
     let img = UIImagePickerController()
     var originalImage:UIImage? = nil
@@ -176,6 +177,7 @@ class kullanicikayit: UIViewController , UIPickerViewDataSource,UIPickerViewDele
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imgview.image = info[.originalImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
+        self.bilgilabel.isHidden = true
         
     }
     
@@ -201,7 +203,8 @@ class kullanicikayit: UIViewController , UIPickerViewDataSource,UIPickerViewDele
         
         thePicker.delegate = self
         
-       
+        imgview.layer.cornerRadius =  imgview.bounds.height / 2
+        imgview.clipsToBounds = true
     }
     
     
