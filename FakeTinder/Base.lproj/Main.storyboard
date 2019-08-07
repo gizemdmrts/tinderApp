@@ -56,8 +56,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="icons8-home-page-50" id="acW-dT-cKf">
-                        <inset key="imageInsets" minX="0.0" minY="13" maxX="0.0" maxY="0.0"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="acW-dT-cKf">
+                        <inset key="imageInsets" minX="0.0" minY="-4" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="Likeİmage" destination="Enb-6i-3C5" id="3dL-8j-9rP"/>
@@ -474,9 +474,7 @@
                         <color key="backgroundColor" white="0.96313827500000004" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="1tY-Qh-do4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="icons8-user-50" id="U2h-77-A2t">
-                        <inset key="imageInsets" minX="0.0" minY="11" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Profile" image="avatar" id="U2h-77-A2t"/>
                     <connections>
                         <outlet property="adi" destination="tqN-P8-3YL" id="zBI-Ob-l1r"/>
                         <outlet property="dogumtarihi" destination="5Dv-Yw-20S" id="uNz-mp-bct"/>
@@ -732,9 +730,7 @@
         <scene sceneID="usp-5E-9tH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tf0-bs-5Zv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Explore" image="icons8-search-50" id="cPa-gy-q4n">
-                        <inset key="imageInsets" minX="0.0" minY="11" maxX="0.0" maxY="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Explore" image="magnifying-glass" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1zE-If-rja">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -753,8 +749,7 @@
         <scene sceneID="duN-03-YsY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YrF-It-ZEw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Messages" image="icons8-chat-message-50" id="GTK-cR-8vT">
-                        <inset key="imageInsets" minX="0.0" minY="11" maxX="0.0" maxY="0.0"/>
+                    <tabBarItem key="tabBarItem" title="Messages" image="chat-3" selectedImage="chat-3" springLoaded="YES" id="GTK-cR-8vT">
                         <inset key="largeContentSizeImageInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -776,11 +771,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-chat-message-50" width="50" height="50"/>
-        <image name="icons8-home-page-50" width="50" height="50"/>
-        <image name="icons8-search-50" width="50" height="50"/>
-        <image name="icons8-user-50" width="50" height="50"/>
+        <image name="avatar" width="32" height="32"/>
+        <image name="chat-3" width="32" height="32"/>
+        <image name="home" width="32" height="32"/>
         <image name="images-2" width="225" height="225"/>
+        <image name="magnifying-glass" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="oRr-UJ-Ezm"/>
